@@ -2,15 +2,35 @@ package com.example.demo.Model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "product", schema = "mall")
 public class Product {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="productId")
 	private Integer productId;
-	private String ProductName;
+	@Column(name="productName")
+	private String productName;
+	@Column(name="category")
 	private String category;
+	@Column(name="imageUrl")
 	private String imageUrl;
+	@Column(name="price")
 	private Integer price;
+	@Column(name="stock")
 	private Integer stock;
+	@Column(name="description")
 	private String description;
+	@Column(name="createDate")
 	private Date createDate;
+	@Column(name="lastModifiedDate")
 	private Date lastModifiedDate;
 
 	public Product() {
@@ -21,7 +41,7 @@ public class Product {
 			Integer stock, String description, Date createDate, Date lastModifiedDate) {
 		super();
 		this.productId = productId;
-		ProductName = productName;
+		this.productName = productName;
 		this.category = category;
 		this.imageUrl = imageUrl;
 		this.price = price;
@@ -40,11 +60,11 @@ public class Product {
 	}
 
 	public String getProductName() {
-		return ProductName;
+		return productName;
 	}
 
 	public void setProductName(String productName) {
-		ProductName = productName;
+		this.productName = productName;
 	}
 
 	public String getCategory() {
