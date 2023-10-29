@@ -14,9 +14,9 @@ public class ProductService {
 	@Autowired ProductDao productDao;
 	
 	public String getProductById() {
-		
+			
 			List<Product> product = (List<Product>) productDao.findAll();
-			product.get(0).getProductName();
+			product.get(0);
 			return product.get(0).getProductName();
 	}
 }
