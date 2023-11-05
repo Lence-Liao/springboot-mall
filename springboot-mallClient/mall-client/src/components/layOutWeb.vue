@@ -4,11 +4,17 @@
         <header style="background-color: rgb(238,78,46);">
         <div class="container">
             <div class="row d-flex justify-content-center align-items-center">
-                <div class="col-3"><img class="img-fluid" src="@/assets/logo.png"></div>
+                <router-link :to="{name:'homeView'}" class="col-3">
+                    <div ><img class="img-fluid" src="@/assets/logo.png"></div>
+                </router-link>
                 <input class="col-6" type="text" placeholder="請輸入關鍵字">
                 <button class="col-1">Search</button>
-                <div class="col-1 border" style="cursor: pointer;">會員註冊</div>
-                <div class="col-1 border" style="cursor: pointer;">登入</div>
+                <router-link :to="{name:'signUpView'}" class="col-1 border">
+                    <div  style="cursor: pointer;">會員註冊</div>
+                </router-link>
+                <router-link :to="{name:'loginView'}" class="col-1 border">
+                    <div  style="cursor: pointer;">登入</div>
+                </router-link>
             </div>
         </div>
         </header>
